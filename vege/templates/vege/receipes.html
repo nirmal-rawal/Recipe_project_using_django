@@ -1,11 +1,13 @@
 {% extends "vege/base.html" %}
 {% block start %}
+
     <div class="container mt-5 ">
         <form class="col-6 mx-auto card p-3 shadow-lg" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <h2>Add Receipe</h2>
             <hr>
             <div class="mb-3">
+                
                 <label class="form-label">Receipe name</label>
                 <input name="receipe_name" required class="form-control">
             </div>
@@ -38,7 +40,7 @@
             </div>
 
         </div>
-
+        
         <table class="table table-bordered mt-5">
             <thead>
                 <tr>
@@ -67,5 +69,6 @@
                 {% endfor %}
             </tbody>
         </table>
+        
     </div>
 {% endblock start %}

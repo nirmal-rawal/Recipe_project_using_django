@@ -25,8 +25,12 @@ from vege import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('r/',include('vege.urls')),
-    path("delect-recepie/<id>",views.delete_receipe,name="delete_receipe"),
-    path("update-recepie/<id>",views.update_receipe,name="update_receipe"),
+    path("delect-recepie/<int:id>/",views.delete_receipe,name="delete_receipe"),
+    path("login/",views.login_page,name="login_page"),
+    
+    path("logout/",views.logout_page,name="logout_page"),
+    path("register/",views.register,name="register_page"),
+    path("update-recepie/<int:id>/",views.update_receipe,name="update_receipe"),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
